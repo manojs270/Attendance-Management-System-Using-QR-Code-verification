@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+	<form method="post" action="{{ url_for('save') }}" enctype='multipart/form-data'>
+		<fieldset>
+			<legend class="hidden-first">Add New Subject</legend>
+			<input name="cat" type="hidden" value='subject'>
+			<input name="modifier" type="hidden" value='id'>
+			<input name="id" type="hidden" value="{{data[0]}}">
+			<input name="act" type="hidden" value="{{act}}">
+		
+			<label>Name</label>
+			<input 
+				class="form-control" 
+				type="text" 
+				name="name"
+				value="{{data[1]}}" /><br>
+			<label>Couse Id</label>
+			<input 
+				class="form-control" 
+				type="text" 
+				name="couse_id"
+				value="{{data[2]}}" /><br>
+			<label>Sem Id</label>
+			<input 
+				class="form-control" 
+				type="text" 
+				name="sem_id"
+				value="{{data[3]}}" /><br><br>
+			<input type="submit" value=" Save " class="btn btn-success">
+		</fieldset>
+	</form>
+{% endblock %}
